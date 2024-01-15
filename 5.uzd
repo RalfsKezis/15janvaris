@@ -1,1 +1,15 @@
 
+def ierakstit_vardu_faila(vards):
+    try:
+        with open("lietotajs.txt", 'w', encoding='utf-8') as f:
+            f.write(vards)
+        
+        print("Vārds veiksmīgi ierakstīts failā 'lietotajs.txt'.")
+    except IOError as e:
+        print(f"Kļūda: Nevarēja ierakstīt failā. {e}")
+    except Exception as e:
+        print(f"Kļūda: {e}")
+
+if __name__ == "__main__":
+    lietotaja_vards = input("Ievadiet savu vārdu: ")
+    ierakstit_vardu_faila(lietotaja_vards)
