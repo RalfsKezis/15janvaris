@@ -1,1 +1,13 @@
+def lasit_un_drukats(fails):
+    try:
+        with open(fails, 'r', encoding='utf-8') as f:
+            saturs = f.read()
+            print("Faila saturs:")
+            print(saturs)
+    except FileNotFoundError:
+        print(f"Kļūda: Fails '{fails}' nav atrasts.")
+    except Exception as e:
+        print(f"Kļūda: {e}")
 
+if __name__ == "__main__":
+    lasit_un_drukats('piemers.txt')
