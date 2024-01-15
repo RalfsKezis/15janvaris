@@ -1,1 +1,20 @@
+def lasit_un_drukats():
+    try:
+        nosaukums = input("Ievadiet faila nosaukumu: ")
+        paplasinajums = input("Ievadiet faila paplašinājumu (piemēram, txt): ")
+
+        fails = f"{nosaukums}.{paplasinajums}"
+
+        with open(fails, 'r', encoding='utf-8') as f:
+            saturs = f.read()
+            print("Faila saturs:")
+            print(saturs)
+    except FileNotFoundError:
+        print(f"Kļūda: Fails '{fails}' nav atrasts.")
+    except Exception as e:
+        print(f"Kļūda: {e}")
+
+if __name__ == "__main__":
+    lasit_un_drukats()
+
 
