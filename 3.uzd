@@ -1,1 +1,18 @@
+def lasit_treso_rindu(fails):
+    try:
+        with open(fails, 'r', encoding='utf-8') as f:
+            rindas = f.readlines()
+            if len(rindas) >= 3:
+                tresa_rinda = rindas[2]
+                print("Trešās rindas saturs:")
+                print(tresa_rinda)
+            else:
+                print("Kļūda: Failā nav pietiekami daudz rindu.")
+    except FileNotFoundError:
+        print(f"Kļūda: Fails '{fails}' nav atrasts.")
+    except Exception as e:
+        print(f"Kļūda: {e}")
+
+if __name__ == "__main__":
+    lasit_treso_rindu('piemers.txt')
 
